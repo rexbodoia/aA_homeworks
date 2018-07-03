@@ -50,7 +50,7 @@ class Play
   end
 
   def self.find_by_title(title)
-    PlayDBConnection.instance.execute(<<-SQL, @title)
+    play = PlayDBConnection.instance.execute(<<-SQL, @title)
       SELECT
         *
       FROM
@@ -64,7 +64,7 @@ class Play
   end
 
   def self.find_by_playwright(name)
-    PlayDBConnection.instance.execute(<<-SQL, @id, @playwright_id)
+    play = PlayDBConnection.instance.execute(<<-SQL, @id, @playwright_id)
       SELECT
         *
       FROM
@@ -85,7 +85,7 @@ class Playwright
   end
 
   def self.find_by_name
-    PlayDBConnection.instance.execute(<<-SQL, @name)
+    person = PlayDBConnection.instance.execute(<<-SQL, @name)
       SELECT
         *
       FROM
@@ -128,7 +128,7 @@ class Playwright
 
   def get_plays
     raise "#{self} not in database" unless @id
-    PlayDBConnection.instance.execute(<<-SQL, @id)
+    plau = PlayDBConnection.instance.execute(<<-SQL, @id)
       SELECT
         *
       FROM
