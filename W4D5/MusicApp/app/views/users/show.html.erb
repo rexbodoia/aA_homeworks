@@ -1,0 +1,11 @@
+<h3>Hello, <%=
+  result = []
+  @user.email.chars.each do |char|
+    char == '@' ? break : result << char
+  end
+  result.join("")
+%>!</h3>
+
+<form action="<%= new_session_url %>" method="get">
+    <input type="submit" value="Log out" id="log_out">
+</form>
