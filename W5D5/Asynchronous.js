@@ -8,9 +8,9 @@ window.setTimeout(function alert() {
   console.log('HAMMERTIME');
 }, 5000);
 
-
 function hammerTime(time){
   window.setTimeout(function alert() {
+
     console.log(`${time} is hammertime!`);
   }, 5000);
 }
@@ -30,5 +30,5 @@ function teaAndBiscuits () {
       console.log(`So you ${firstRes} want tea and you ${secondRes} want biscuits.`);
       reader.close();
       });
-  });
+  })
 }
